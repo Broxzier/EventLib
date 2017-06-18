@@ -11,7 +11,7 @@ namespace EventLibTest
 TEST_CLASS(EventTest)
 {
 public:
-	TEST_METHOD(Connect)
+	TEST_METHOD(EventConnect)
 	{
 		int  i          = 0;
 		auto IncrementI = [&i]() -> void { i++; };
@@ -27,7 +27,7 @@ public:
 		Assert::AreEqual(i, 1); // i == 1
 	}
 
-	TEST_METHOD(Disconnect)
+	TEST_METHOD(EventDisconnect)
 	{
 		int  i = 0;
 		auto IncrementI = [&i]() -> void { i++; };
@@ -44,7 +44,7 @@ public:
 		Assert::AreEqual(i, 1); // i == 1
 	}
 
-	TEST_METHOD(ConnectSimultaneously)
+	TEST_METHOD(EventConnectSimultaneously)
 	{
 		int  i = 0;
 		auto IncrementI = [&i]() -> void { i++; };
