@@ -44,6 +44,23 @@ public:
 		Assert::AreEqual(i, 1); // i == 1
 	}
 
+	TEST_METHOD(EventDisconnect2)
+	{
+		int  i = 0;
+		auto IncrementI = [&i]() -> void { i++; };
+
+		el::Event<void()> Signal;
+		auto connection = Signal.Connect(IncrementI);
+		Signal();
+
+		Assert::AreEqual(i, 1); // i == 1
+
+		Signal.Disconnect(connection);
+		Signal();
+
+		Assert::AreEqual(i, 1); // i == 1
+	}
+
 	TEST_METHOD(EventConnectSimultaneously)
 	{
 		int  i = 0;
@@ -68,6 +85,30 @@ public:
 		Signal();
 
 		Assert::AreEqual(i, 10000);
+	}
+
+	TEST_METHOD(EventBlocking)
+	{
+		int  i = 0;
+		auto IncrementI = [&i]() -> void { i++; };
+
+		el::Event<void()> Signal;
+
+		el::Connection connection = Signal.Connect(IncrementI);
+
+		Signal();
+
+		Assert::AreEqual(i, 1); // i == 1
+
+		connection.SetBlocking(true);
+		Signal();
+
+		Assert::AreEqual(i, 1); // i == 1
+
+		connection.SetBlocking(false);
+		Signal();
+
+		Assert::AreEqual(i, 2); // i == 2
 	}
 };
 
