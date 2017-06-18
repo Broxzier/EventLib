@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventTest", "EventLibTests.vcxproj", "{3A3A597A-52E4-4770-B4C2-6A277969AA04}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EventLibTests", "EventLibTests.vcxproj", "{3A3A597A-52E4-4770-B4C2-6A277969AA04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
