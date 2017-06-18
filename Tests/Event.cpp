@@ -1,11 +1,10 @@
 #include "CppUnitTest.h"
-#include "stdafx.h"
 
 #include <EventLib/Event.hpp>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace EventTest
+namespace EventLibTest
 {
 
 TEST_CLASS(EventTest)
